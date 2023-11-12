@@ -4,6 +4,7 @@ import type { NitroPreset } from "nitropack";
 export default <NitroPreset>{
   extends: "node-server",
   entry: fileURLToPath(new URL("entry.ts", import.meta.url)),
+  exportConditions: ["bun", "worker", "node", "import", "default"],
   hooks: {
     compiled() {
       console.info("Using Custom Preset!");
